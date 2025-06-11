@@ -1,11 +1,20 @@
 ---
 import LayoutInit from "./LayoutInit.astro";
 import NavBar from "./NavBar.astro";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className }: Props = Astro.props;
 ---
 
 <LayoutInit>
     <NavBar/>
-    <main class="bg-background" >
+    <main class:list={[
+        "bg-background p-5 pt-19 space-y-3",
+        className
+    ]} >
         <slot/>
     </main>
 </LayoutInit>

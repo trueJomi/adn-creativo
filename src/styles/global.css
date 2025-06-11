@@ -12,8 +12,12 @@
     --font-kulen: 'Koulen', sans-serif;
     --color-background: #EEEAC6;
     --color-primary: #930646;
+    --color-background-500: #DBD27F;
 }
 
 html {
     scroll-behavior: smooth;
+}
+button {
+    cursor: pointer;
 }

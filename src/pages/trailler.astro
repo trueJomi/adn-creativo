@@ -1,17 +1,20 @@
 ---
+import Description from "../components/utils/Description.astro";
+import Tittle from "../components/utils/Tittle.astro";
+import Video from "../components/utils/Video.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-    hola
+<Layout class="grid md:grid-cols-2 md:gap-x-10" >
+    <Tittle class="text-center md:col-span-2">
+        Trailler
+    </Tittle>
     <div>
-        <lite-youtube
-            videoid="HOqma0a0IzA"
-            title="ADN CREATIVO - Teaser"
-            
-        ></lite-youtube>
+        <Video/>
+    </div>
+    <div class="md:flex md:flex-col md:justify-between" >
+        <Description>
+            En la ciudad de Trujillo, artistas independientes crean desde sus propios espacios y disciplinas. Más allá de las limitaciones y dificultades, eligen expresarse a través del arte. Este documental explora sus procesos creativos y muestra cómo la creatividad se desarrolla en contextos reales, donde lo cotidiano convive con la necesidad de decir algo, de transformar el entorno y de encontrar sentido a través de la expresión.
+        </Description>
     </div>
 </Layout>
-<script>
-    import '@justinribeiro/lite-youtube';
-</script>

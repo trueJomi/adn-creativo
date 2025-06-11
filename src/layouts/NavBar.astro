@@ -1,24 +1,127 @@
 ---
-import logo from '../assets/logo.webp';
+import Bars from "../assets/Bars.astro";
+import logo from "../assets/logo.webp";
 import { Image } from "astro:assets";
+import XIcon from "../assets/XIcon.astro";
+import Ig from "../assets/Ig.astro";
+import Yt from "../assets/yt.astro";
+import Tiktok from "../assets/Tiktok.astro";
 
+const routes = [
+  {
+    name: "Inicio",
+    path: "/",
+  },
+  {
+    name: "Trailler",
+    path: "/trailler",
+  },
+  {
+    name: "Serie web",
+    path: "/cap/1",
+  },
+  {
+    name: "Podcast",
+    path: "/podcast",
+  },
+  {
+    name: "Mapa",
+    path: "/map",
+  },
+  {
+    name: "Juego",
+    path: "/game",
+  },
+];
 ---
-<header transition:animate="none"  class="h-16 bg-primary py-2 px-3 flex justify-between" >
-    <a
-        href="/"
-    >
-        <Image
-            src={logo}
-            alt="Logo ADN CREATIVO"
-            class="h-12 w-auto mx-auto"
-            width={100}
-            height={100}
-        />
-    </a>
-    <nav>
 
-    </nav>
-    <div>
-        
-    </div>
+<header
+  transition:animate="none"
+  class="h-16 bg-primary py-2 px-3 flex justify-between items-center z-10 fixed w-full"
+>
+  <a href="/">
+    <Image
+      src={logo}
+      alt="Logo ADN CREATIVO"
+      class="h-12 w-auto mx-auto"
+      width={100}
+      height={100}
+    />
+  </a>
+  <nav
+    id="nav-menu"
+    class="h-screen md: md:h-auto bg-primary md:static fixed top-0 -right-55 duration-200 md:translate-none transition-transform z-30 items-center flex"
+  >
+    <button
+      class="menu-button text-background absolute top-2 left-2 w-10 h-10 p-2"
+    >
+      <XIcon />
+    </button>
+    <ul class="md:flex md:gap-0 grid gap-2 items-center md:justify-center">
+      {
+        routes.map((route) => (
+          <li>
+            <a
+              href={route.path}
+              class="text-background font-kulen md:text-lg text-2xl md:px-5 px-16 hover:underline"
+            >
+              {route.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <button
+    class="menu-button text-background hover:text-primary w-10 h-10 p-2 pt-1.5 md:hidden hover:border-primary hover:bg-background border-background border-2 rounded-xl"
+  >
+    <Bars />
+  </button>
+  <div
+    id="dark-overlay"
+    class="fixed md:hidden inset-0 menu-button bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-20"
+  >
+  </div>
 </header>
+<div class=" fixed top-18 left-2 z-10 w-10 grid gap-2" >
+  <a  href="https://www.instagram.com/reel/DKTMQMZymGO/?igsh=c3V2djBlcTBlNDYy">
+    <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
+      <Ig/>
+    </div>
+  </a>
+  <a href="">
+    <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
+      <Tiktok/>
+    </div>
+  </a>
+  <a href="">
+    <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
+      <Yt/>
+    </div>
+  </a>
+</div>
+
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const buttons = document.querySelectorAll(".menu-button");
+    const nav = document.getElementById("nav-menu");
+    const overlay = document.getElementById("dark-overlay");
+    if (!buttons || !nav || !overlay) {
+      throw new Error("Menu button or nav element not found");
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        nav.classList.toggle("-translate-x-55");
+        overlay.classList.toggle("opacity-50");
+        overlay.classList.toggle("pointer-events-none");
+      });
+      if (nav.classList.contains("-translate-x-45")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    });
+  });
+</script>

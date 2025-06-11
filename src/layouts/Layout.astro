@@ -1,0 +1,11 @@
+---
+import LayoutInit from "./LayoutInit.astro";
+import NavBar from "./NavBar.astro";
+---
+
+<LayoutInit>
+    <NavBar/>
+    <main class="bg-background" >
+        <slot/>
+    </main>
+</LayoutInit>

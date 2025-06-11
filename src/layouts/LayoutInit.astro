@@ -1,0 +1,36 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/webp" href="./logo.webp">
+        <meta name="description" content="Empresa de productos y servicos de segurida para el hogar y empresas." />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="image" content="./logo.webp" />
+        <meta property="og:title" content="Neelss, 14 años al servicio de tu seguridad" />
+        <meta property="og:description" content="Empresa de productos y servicos de seguridad para el hogar y empresas." />
+        <meta property="og:image" content="./logo.webp" />
+        <!-- <meta property="og:url" content="https://neelss.com" /> -->
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Neelss, 14 años al servicio de tu seguridad" />
+        <meta name="twitter:description" content="Empresa de productos y servicos de seguridad para el hogar y empresas." />
+        <meta name="twitter:image" content="./logo.webp" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:site_name" content="Neelss" />
+		<link rel="preconnect" href="https://firebasestorage.googleapis.com">
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+		<title>ADN Creativo</title>
+		<ClientRouter/>
+	</head>
+	<body transition:animate="slide"  class="relative" >
+		<slot/>
+	</body>
+</html>

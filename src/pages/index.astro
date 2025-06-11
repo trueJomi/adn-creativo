@@ -1,16 +1,30 @@
 ---
-
+import { Image } from "astro:assets";
+import LayoutInit from '../layouts/LayoutInit.astro';
+import siluetta from '../assets/silueata.png';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<LayoutInit>
+	<main transition:animate="slide" class="bg-background h-dvh p-10 pb-0 relative flex flex-col justify-between" >
+		<div class="font-tittle text-5xl text-center">
+			<h1 class="text-primary text-[7rem]">ADN</h1>
+			<h2 class="text-primary">CREATIVO</h2>
+		</div>
+		<div class=" uppercase font-kulen flex text-background text-xl justify-center" >
+			<div class="gap-5 grid" >
+				<a class="bg-primary text-center px-8 py-4 rounded-2xl"  href="/teaser">
+					empezar
+				</a>
+				<a class="bg-primary text-center px-8 py-4 rounded-2xl" href="/artistas">
+					nuestros artistas
+				</a>
+			</div>
+		</div>
+		<picture class=" w-full right-0" >
+			<Image
+				src={siluetta}
+				alt="Silueta de un hombre con fondo blanco"
+				class="h-80 w-auto mx-auto"
+			/>
+		</picture>
+	</main>
+</LayoutIni>

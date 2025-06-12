@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm install -g pnpm # Install pnpm globally
       - run: pnpm install # Install dependencies using pnpm
+      - run: pnpm add sharp
       - run: pnpm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

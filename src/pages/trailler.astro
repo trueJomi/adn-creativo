@@ -1,20 +1,28 @@
 ---
 import Description from "../components/utils/Description.astro";
+import NavigatorButtons from "../components/utils/NavigatorButtons.astro";
 import Tittle from "../components/utils/Tittle.astro";
 import Video from "../components/utils/Video.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout class="grid md:grid-cols-2 md:gap-x-10" >
-    <Tittle class="text-center md:col-span-2">
+<Layout class="grid md:grid-cols-2 md:gap-x-10 md:space-y-0" >
+    <Tittle class="text-center md:col-span-2 md:mb-2">
         Trailler
     </Tittle>
     <div>
         <Video/>
     </div>
-    <div class="md:flex md:flex-col md:justify-between" >
+    <div class="md:flex md:flex-col md:justify-center space-y-5" >
         <Description>
             En la ciudad de Trujillo, artistas independientes crean desde sus propios espacios y disciplinas. Más allá de las limitaciones y dificultades, eligen expresarse a través del arte. Este documental explora sus procesos creativos y muestra cómo la creatividad se desarrolla en contextos reales, donde lo cotidiano convive con la necesidad de decir algo, de transformar el entorno y de encontrar sentido a través de la expresión.
         </Description>
+        <NavigatorButtons
+            class=" text-center"
+            main={{
+                name: "Mira el primer capítulo",
+                path: "/serie/1"
+            }}
+        />
     </div>
 </Layout>

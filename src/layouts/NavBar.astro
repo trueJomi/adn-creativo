@@ -3,9 +3,9 @@ import Bars from "../assets/Bars.astro";
 import logo from "../assets/logo.webp";
 import { Image } from "astro:assets";
 import XIcon from "../assets/XIcon.astro";
-import Ig from "../assets/Ig.astro";
 import Yt from "../assets/yt.astro";
 import Tiktok from "../assets/Tiktok.astro";
+import Ig from "../assets/Insta.astro";
 
 const routes = [
   {
@@ -53,7 +53,7 @@ const routes = [
     class="h-screen md: md:h-auto bg-primary md:static fixed top-0 -right-55 duration-200 md:translate-none transition-transform z-30 items-center flex"
   >
     <button
-      class="menu-button text-background absolute top-2 left-2 w-10 h-10 p-2"
+      class="menu-button text-background absolute top-2 left-2 w-10 h-10 p-2 md:hidden"
     >
       <XIcon />
     </button>
@@ -63,7 +63,7 @@ const routes = [
           <li>
             <a
               href={route.path}
-              class="text-background font-kulen md:text-lg text-2xl md:px-5 px-16 hover:underline"
+              class="text-background font-teko md:text-lg text-2xl md:px-5 px-16 hover:underline font-bold"
             >
               {route.name}
             </a>
@@ -84,17 +84,17 @@ const routes = [
   </div>
 </header>
 <div class=" fixed top-18 left-2 z-10 w-10 grid gap-2" >
-  <a  href="https://www.instagram.com/reel/DKTMQMZymGO/?igsh=c3V2djBlcTBlNDYy">
+  <a  href="https://www.instagram.com/adncreativoart">
     <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
       <Ig/>
     </div>
   </a>
-  <a href="">
+  <a href="https://www.tiktok.com/@adncreativoart">
     <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
       <Tiktok/>
     </div>
   </a>
-  <a href="">
+  <a href="https://www.youtube.com/@ADNCREATIVOART">
     <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
       <Yt/>
     </div>

@@ -1,12 +1,41 @@
 ---
+import type { Page } from "../../model/page.model";
+
 interface Props {
-  mainText: string;
-  previous?: string;
-  next?: string;
+  main: Page;
+  previous?: Page;
+  next?: Page;
+  class?: string;
 }
 
-const { mainText, previous, next }: Props = Astro.props;
+const { main, previous, next, class: className }: Props = Astro.props;
 ---
-<nav>
-
+<nav class={className}>
+  {
+    previous && (
+      <a href={previous.path}>
+        <button>
+          <span class="text-primary font-teko text-2xl font-bold">
+            {previous.name}
+          </span>
+        </button>
+      </a>
+    )
+  }
+<a href={main.path}>
+  <button class="bg-primary text-background px-4 py-2 rounded-2xl font-teko text-2xl font-bold">
+    {main.name}
+  </button>
+</a>
+{
+  next && (
+    <a href={next.path}>
+      <button>
+        <span class="text-primary font-teko text-2xl font-bold">
+          {next.name}
+        </span>
+      </button>
+    </a>
+  )
+}
 </nav>

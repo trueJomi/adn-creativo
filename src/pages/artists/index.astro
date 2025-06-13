@@ -1,44 +1,13 @@
 ---
 import CardArtist from "../../components/artist/CardArtist.astro";
 import Layout from "../../layouts/Layout.astro";
-const artist = [
-    {
-        image: "https://st3.depositphotos.com/2024219/34764/i/450/depositphotos_347649556-stock-photo-young-businessman-workplace-points-finger.jpg",
-        titulo: "colores del origen",
-        slug: "colores-del-origen",
-        color: "blue"
-    },
-    {
-        image: "https://static-cse.canva.com/blob/1277181/Usosbuenosymalosdelasfotosdestock4.png",
-        titulo: "sonidos de identidad",
-        slug: "sonidos-de-identidad",
-        color: "yellow"
-    },
-    {
-        image: "https://www.fotostockfacil.com/wp-content/uploads/2021/04/personas.jpg",
-        titulo: "cuerpos en escena",
-        slug: "cuerpos-en-escena",
-        color: "white"
-    },
-    {
-        image: "https://www.istockphoto.com/resources/images/PhotoFTLP/Lifestyle-1033457250.jpg",
-        titulo: "palabras que habitan",
-        slug: "palabras-que-habitan",
-        color: "red"
-    },
-    {
-        image: "https://images.ctfassets.net/hrltx12pl8hq/5TwlZb9X6z7KdFWx3I0wUd/32c5d11dd62e68bfd13ba10975043a9a/Dad-Thumbnail.jpg",
-        titulo: "adn creativo",
-        slug: "adn-creativo",
-        color: "green"
-    }
-]
+import { capitulos } from "../../const/capitulos";
 
 ---
 
 <Layout class="space-y-0">
     <ul class="grid md:grid-cols-2 gap-5" >
-        {artist.map((artista) => (
+        {capitulos.map((artista) => (
             <li>
                 <CardArtist
                     href={`/artists/${artista.slug}`}

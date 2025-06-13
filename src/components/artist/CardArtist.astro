@@ -11,7 +11,7 @@ const { class: className, bgimage, color, text, href }: Props = Astro.props;
 ---
 <a href={href}>
     <div class:list={[
-        "bg-cover bg-center bg-no-repeat rounded-2xl p-10 py-20 filter-color",
+        "bg-cover bg-top bg-no-repeat rounded-2xl p-10 py-25 filter-color",
         className
     ]} style={`background-image: url(${bgimage});`}>
         <h1 class="uppercase text-center font-teko text-3xl font-bold text-white" >{text}</h1>

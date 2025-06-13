@@ -1,6 +1,17 @@
+---
+  interface Props {
+    class?: string;
+    video: string;
+  }
+const { class: className, video }: Props = Astro.props as Props;
+---
+
 <lite-youtube
-  class="rounded-2xl border-3 border-primary"
-  videoid="gFS4A5Eajzg"
+  class:list={[
+    "rounded-2xl border-3 border-primary",
+    className
+  ]}
+  videoid={video}
   title="ADN CREATIVO - Teaser"></lite-youtube>
 <script>
   import "@justinribeiro/lite-youtube";

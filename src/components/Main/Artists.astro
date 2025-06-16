@@ -1,22 +1,166 @@
 ---
-import { capitulos } from "../../const/capitulos";
+import { artistas } from "../../const/capitulos";
 import CardArtist from "../artist/CardArtist.astro";
+import InfoArtist from "../artist/InfoArtist.astro";
 import Seccion from "../utils/Seccion.astro";
 import Tittle from "../utils/Tittle.astro";
 ---
 
 <Seccion id="artists">
-    <Tittle class="text-center" >
-        Nuestros Artistas
-    </Tittle>
-    <div class=" grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-3 lg:gap-5">
-        {capitulos.map((capitulo) => (
-            <CardArtist
-                bgimage={capitulo.image}
-                color={capitulo.color}
-                text={capitulo.titulo}
-                href={`/artists/${capitulo.slug}`}
+  <div id="modal-container-slider">
+    <div class="modal-background">
+      <div class="modal p-5 bg-white" onclick="event.stopPropagation()">
+        {
+          artistas.map((a) => (
+            <InfoArtist
+              class={`w-full hidden info info-artist-${a.id}`}
+              artista={a}
             />
-        ))}
+          ))
+        }
+      </div>
     </div>
+  </div>
 </Seccion>
+<Tittle class="text-center"> Nuestros Artistas </Tittle>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 lg:gap-5">
+  {
+    artistas.map((a) => {
+      let title = a.nombre;
+      if (a.apellido !== undefined) {
+        title += ` ${a.apellido}`;
+      }
+      return (
+        <CardArtist id={a.id.toString()} bgimage={a.imagen} text={title} />
+      );
+    })
+  }
+</div>
+
+<style>
+  #modal-container-slider {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 40;
+    &.unfolding {
+      transform: scaleY(0.01) scaleX(0);
+      animation: unfoldIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      .modal-background {
+        .modal {
+          transform: scale(0);
+          animation: zoomIn 0.25s 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+            forwards;
+        }
+      }
+      &.out {
+        transform: scale(1);
+        animation: unfoldOut 0.5s 0.15s cubic-bezier(0.165, 0.84, 0.44, 1)
+          forwards;
+        .modal-background {
+          .modal {
+            animation: zoomOut 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          }
+        }
+      }
+    }
+    .modal-background {
+      display: table-cell;
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      vertical-align: middle;
+      .modal {
+        /* background:white; */
+        /* padding:50px; */
+        z-index: 2;
+        display: inline-block;
+        /* border-radius:3px; */
+        /* font-weight:300; */
+        position: relative;
+      }
+    }
+  }
+
+  @keyframes unfoldIn {
+    0% {
+      transform: scaleY(0.005) scaleX(0);
+    }
+    50% {
+      transform: scaleY(0.005) scaleX(1);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1);
+    }
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes unfoldOut {
+    0% {
+      transform: scaleY(1) scaleX(1);
+    }
+    50% {
+      transform: scaleY(0.005) scaleX(1);
+    }
+    100% {
+      transform: scaleY(0.005) scaleX(0);
+    }
+  }
+
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+</style>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const artists = document.querySelectorAll(".artist");
+    const infoData = document.querySelectorAll(".info");
+    const modalContainer = document.getElementById("modal-container-slider");
+
+    if (!modalContainer || infoData.length === 0 || artists.length === 0) {
+      throw new Error("Modal container not found");
+    }
+
+    modalContainer.addEventListener("click", () => {
+      modalContainer.classList.add("out");
+      document.body.classList.remove("modal-active");
+      document.body.style.overflow = "";
+    });
+
+    artists.forEach((artist) => {
+      artist.addEventListener("click", () => {
+        const artistId = artist.getAttribute("data-artist-id");
+        console.log(artistId);
+        const info = document.getElementsByClassName(`info-artist-${artistId}`);
+        infoData.forEach((i) => {
+          i.classList.add("hidden");
+        });
+        if (info.length === 0) {
+          throw new Error(`Info for artist ${artistId} not found`);
+        }
+        info[0].classList.remove("hidden");
+        console.log(artistId);
+        modalContainer.removeAttribute("class");
+        modalContainer.classList.add("unfolding");
+        document.body.classList.add("modal-active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+  });
+</script>

@@ -1,16 +1,15 @@
 ---
 interface Props {
   class?: string;
-  href: string;
   bgimage: string;
-  color: string;
   text: string;
+  id?: string;
 }
 
-const { class: className, bgimage, color, text, href }: Props = Astro.props;
+const { class: className, bgimage, text, id }: Props = Astro.props;
 ---
 
-<a href={href}>
+<button data-artist-id={id} class="artist">
   <div
     class:list={[
       "bg-cover bg-top bg-no-repeat rounded-2xl p-10 py-25 aspect-[3/4] relative overflow-hidden",
@@ -20,13 +19,13 @@ const { class: className, bgimage, color, text, href }: Props = Astro.props;
   >
     <div class="gradient-overlay"></div>
     <h1
-      class="uppercase font-teko text-lg font-bold text-white absolute -bottom-2 p-5 left-0 w-full z-1"
+      class="uppercase font-teko md:text-xl font-bold text-white absolute -bottom-2 p-5 left-0 w-full z-1"
     >
       {text}
     </h1>
   </div>
-</a>
-<style define:vars={{ color }}>
+</button>
+<style >
   .gradient-overlay {
     position: absolute;
     bottom: 0;

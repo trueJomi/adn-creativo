@@ -165,9 +165,11 @@ import { routes } from "../const/routes";
         delay + i * 100
       );
     });
-
-    // Inicialmente oculta el navbar
-    hideNavbar();
+    
+    if (lastScrollY < 400) {
+      // Inicialmente oculta el navbar
+      hideNavbar();
+    }
 
     // Mostrar navbar después de cierto desplazamiento
     const handleScroll = () => {

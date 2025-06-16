@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import type { Artista } from "../../model/artistas.model";
+interface Props {
+  class: string;
+  artista: Artista;
+}
+
+const { artista, class: className }: Props = Astro.props;
+
+let title = artista.nombre;
+if (artista.apellido !== undefined) {
+  title += ` ${artista.apellido}`;
+}
+---
+
+<div class:list={[className, ""]}>
+  <Image
+    class="object-cover aspect-[3/4] rounded-2xl"
+    src={artista.imagen}
+    width={300}
+    height={400}
+    alt={artista.nombre}
+  />
+  <h1 class="font-teko text-primary text-2xl font-bold mt-3">
+    {title}
+  </h1>
+</div>

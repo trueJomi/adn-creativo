@@ -6,38 +6,13 @@ import XIcon from "../assets/XIcon.astro";
 import Yt from "../assets/yt.astro";
 import Tiktok from "../assets/Tiktok.astro";
 import Ig from "../assets/Insta.astro";
-
-const routes = [
-  {
-    name: "Inicio",
-    path: "/",
-  },
-  {
-    name: "Trailler",
-    path: "/trailler",
-  },
-  {
-    name: "Serie web",
-    path: "/artists",
-  },
-  {
-    name: "Podcast",
-    path: "/podcast",
-  },
-  {
-    name: "Mapa",
-    path: "/map",
-  },
-  {
-    name: "Juego",
-    path: "/game",
-  },
-];
+import { routes } from "../const/routes";
 ---
 
 <header
+  id="navbar"
   transition:animate="none"
-  class="h-16 bg-primary py-2 px-3 flex justify-between items-center z-10 fixed w-full"
+  class="h-16 bg-primary py-2 px-3 flex justify-between items-center z-10 fixed w-full transition-transform duration-300 -translate-y-full"
 >
   <a href="/">
     <Image
@@ -50,14 +25,14 @@ const routes = [
   </a>
   <nav
     id="nav-menu"
-    class="h-screen md: md:h-auto bg-primary md:static fixed top-0 -right-55 duration-200 md:translate-none transition-transform z-30 items-center flex"
+    class="h-screen md: md:h-auto bg-primary md:static fixed top-0 -right-55 duration-200 transition-transform z-30 items-center flex"
   >
     <button
       class="menu-button text-background absolute top-2 left-2 w-10 h-10 p-2 md:hidden"
     >
       <XIcon />
     </button>
-    <ul class="md:flex md:gap-0 grid gap-2 items-center md:justify-center">
+    <ul class="md:flex md:gap-0 grid gap-2 items-center md:justify-center z-30">
       {
         routes.map((route) => (
           <li>
@@ -83,44 +58,139 @@ const routes = [
   >
   </div>
 </header>
-<div class=" fixed top-18 left-2 z-10 w-10 grid gap-2" >
-  <a  href="https://www.instagram.com/adncreativoart">
-    <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
-      <Ig/>
+<div class="fixed top-18 left-2 z-10 w-10 grid gap-2">
+  <a
+    class="relative -translate-x-20 red transition-transform"
+    href="https://www.instagram.com/adncreativoart"
+  >
+    <div
+      class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300"
+    >
+      <Ig />
     </div>
   </a>
-  <a href="https://www.tiktok.com/@adncreativoart">
-    <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
-      <Tiktok/>
+  <a
+    class="relative -translate-x-20 red transition-transform"
+    href="https://www.tiktok.com/@adncreativoart"
+  >
+    <div
+      class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300"
+    >
+      <Tiktok />
     </div>
   </a>
-  <a href="https://www.youtube.com/@ADNCREATIVOART">
-    <div class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300">
-      <Yt/>
+  <a
+    class="relative -translate-x-20 red transition-transform"
+    href="https://www.youtube.com/@ADNCREATIVOART"
+  >
+    <div
+      class="border-2 bg-background text-primary border-primary h-10 p-2 flex items-center hover:scale-125 transition-transform duration-300"
+    >
+      <Yt />
     </div>
   </a>
 </div>
 
-
 <script>
   document.addEventListener("astro:page-load", () => {
     const buttons = document.querySelectorAll(".menu-button");
+    const items = document.querySelectorAll("#nav-menu ul li a");
     const nav = document.getElementById("nav-menu");
     const overlay = document.getElementById("dark-overlay");
-    if (!buttons || !nav || !overlay) {
+    const navBar = document.getElementById("navbar");
+    const redes = document.querySelectorAll(".red");
+
+    if (
+      (buttons.length === 0 ||
+        !nav ||
+        !overlay ||
+        !navBar ||
+        items.length === 0,
+      redes.length === 0)
+    ) {
       throw new Error("Menu button or nav element not found");
     }
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        nav.classList.toggle("-translate-x-55");
-        overlay.classList.toggle("opacity-50");
-        overlay.classList.toggle("pointer-events-none");
-      });
-      if (nav.classList.contains("-translate-x-45")) {
-        document.body.style.overflow = "hidden";
-      } else {
+    function toggleMenu() {
+      if (nav?.classList.contains("-translate-x-55")) {
         document.body.style.overflow = "";
+        nav?.classList.remove("-translate-x-55");
+        overlay?.classList.remove("opacity-50");
+        overlay?.classList.add("pointer-events-none");
+      } else {
+        document.body.style.overflow = "hidden";
+        nav?.classList.add("-translate-x-55");
+        overlay?.classList.add("opacity-50");
+        overlay?.classList.remove("pointer-events-none");
+      }
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", toggleMenu);
+    });
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        document.body.style.overflow = "";
+        nav?.classList.remove("-translate-x-55");
+        overlay?.classList.remove("opacity-50");
+        overlay?.classList.add("pointer-events-none");
+      });
+    });
+
+    // Variables para el manejo del scroll
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    // Función para mostrar la barra de navegación
+    const showNavbar = () => {
+      navBar?.classList.remove("-translate-y-full");
+    };
+
+    // Función para ocultar la barra de navegación
+    const hideNavbar = () => {
+      navBar?.classList.add("-translate-y-full");
+    };
+
+    redes.forEach((red, i) => {
+      let delay = 1200;
+      if (lastScrollY > 400) {
+        delay = 0
+      }
+      setTimeout(
+        () => {
+          red.classList.remove("-translate-x-20");
+        },
+        delay + i * 100
+      );
+    });
+
+    // Inicialmente oculta el navbar
+    hideNavbar();
+
+    // Mostrar navbar después de cierto desplazamiento
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Si estamos al inicio de la página, ocultamos el navbar
+      if (currentScrollY < 400) {
+        hideNavbar();
+        lastScrollY = currentScrollY;
+        ticking = false;
+        return;
+      } else {
+        showNavbar();
+      }
+    };
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
     });
   });

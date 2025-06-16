@@ -15,7 +15,7 @@ const { main, previous, next, class: className }: Props = Astro.props;
     previous && (
       <a href={previous.path}>
         <button>
-          <span class="text-primary font-teko text-2xl font-bold">
+          <span class="text-primary font-teko text-xl font-bold">
             {previous.name}
           </span>
         </button>
@@ -23,7 +23,7 @@ const { main, previous, next, class: className }: Props = Astro.props;
     )
   }
 <a href={main.path}>
-  <button class="bg-primary text-background px-4 py-2 rounded-2xl font-teko text-2xl font-bold">
+  <button class="bg-primary text-background px-4 py-2 rounded-xl font-teko text-xl font-bold">
     {main.name}
   </button>
 </a>
@@ -31,7 +31,7 @@ const { main, previous, next, class: className }: Props = Astro.props;
   next && (
     <a href={next.path}>
       <button>
-        <span class="text-primary font-teko text-2xl font-bold">
+        <span class="text-primary font-teko text-xl font-bold">
           {next.name}
         </span>
       </button>

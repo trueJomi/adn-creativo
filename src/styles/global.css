@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: Larken;
-    font-style: normal;
-    font-weight: 400;
-    src: url('/Larken.woff2') format('woff2');
+  font-family: Larken;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Larken.woff2") format("woff2");
 }
 
 @theme {
-    --font-tittle: 'Larken', sans-serif;
-    --font-teko: 'Teko', sans-serif;
-    --color-background: #EEEAC6;
-    --color-primary: #930646;
-    --color-background-500: #DBD27F;
+  --font-tittle: "Larken", sans-serif;
+  --font-teko: "Teko", sans-serif;
+  --color-background: #eeeac6;
+  --color-primary: #930646;
+  --color-background-500: #dbd27f;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }

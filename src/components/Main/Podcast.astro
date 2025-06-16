@@ -1,0 +1,40 @@
+---
+import Description from "../utils/Description.astro";
+import Seccion from "../utils/Seccion.astro";
+import Tittle from "../utils/Tittle.astro";
+---
+
+<Seccion id="podcast" >
+  <Tittle class="text-center md:col-span-2 md:mb-2"> Podcast </Tittl>
+    <div class="grid md:grid-cols-2 gap-5 md:gap-x-10 reves" >
+        <div class="space-y-5 flex-col justify-center hidden md:flex">
+          <Description class="!p-4 text-center">
+            ¿Y si el arte no solo sirviera para mostrar quiénes somos....sino también
+            para sanarnos?
+          </Description>
+          <p class="font-teko font-medium text-2xl text-primary px-4">
+            En este breve viaje sonoro, Anny Novoa nos invita a descubrir el arte como
+            refugio, el canto como espejo, y la emoción como forma de sanar. Una pausa
+            íntima para reconectar contigo y recordar que crear también es cuidarse.
+          </p>
+        </div>
+        <iframe
+          src="https://open.spotify.com/embed/episode/5SLtYn2YFTNHkvR0KVJT8h?utm_source=generator"
+          width="100%"
+          height="352"
+          class="rounded-lg"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+        <div class="space-y-5 flex flex-col justify-center md:hidden">
+          <Description class="!p-4 text-center text-2xl">
+            ¿Y si el arte no solo sirviera para mostrar quiénes somos....sino también
+            para sanarnos?
+          </Description>
+          <p class="font-teko font-medium text-xl text-primary px-4">
+            En este breve viaje sonoro, Anny Novoa nos invita a descubrir el arte como
+            refugio, el canto como espejo, y la emoción como forma de sanar. Una pausa
+            íntima para reconectar contigo y recordar que crear también es cuidarse.
+          </p>
+        </div>
+    </div>
+</Seccion>

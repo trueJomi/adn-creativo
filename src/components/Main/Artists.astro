@@ -1,0 +1,22 @@
+---
+import { capitulos } from "../../const/capitulos";
+import CardArtist from "../artist/CardArtist.astro";
+import Seccion from "../utils/Seccion.astro";
+import Tittle from "../utils/Tittle.astro";
+---
+
+<Seccion id="artists">
+    <Tittle class="text-center" >
+        Nuestros Artistas
+    </Tittle>
+    <div class=" grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-3 lg:gap-5">
+        {capitulos.map((capitulo) => (
+            <CardArtist
+                bgimage={capitulo.image}
+                color={capitulo.color}
+                text={capitulo.titulo}
+                href={`/artists/${capitulo.slug}`}
+            />
+        ))}
+    </div>
+</Seccion>

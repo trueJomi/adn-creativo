@@ -1,0 +1,33 @@
+---
+import Description from "../utils/Description.astro";
+import NavigatorButtons from "../utils/NavigatorButtons.astro";
+import Seccion from "../utils/Seccion.astro";
+import Tittle from "../utils/Tittle.astro";
+import Video from "../utils/Video.astro";
+---
+
+<Seccion id="trailer" class="md:space-y-0">
+  <Tittle class="text-center md:col-span-2 md:mb-2"> Trailler </Tittle>
+  <div class="grid md:grid-cols-2 gap-5 md:gap-x-5">
+      <div class="h-full md:order-2">
+        <Video video="gFS4A5Eajzg" />
+      </div>
+      <div class="md:flex md:flex-col md:justify-center space-y-3 md:order-2">
+        <Description>
+          En la ciudad de Trujillo, artistas independientes crean desde sus propios
+          espacios y disciplinas. Más allá de las limitaciones y dificultades,
+          eligen expresarse a través del arte. Este documental explora sus procesos
+          creativos y muestra cómo la creatividad se desarrolla en contextos reales,
+          donde lo cotidiano convive con la necesidad de decir algo, de transformar
+          el entorno y de encontrar sentido a través de la expresión.
+        </Description>
+        <NavigatorButtons
+          class="text-center md:col-span-2"
+          main={{
+            name: "Mira el primer capítulo",
+            path: "https://youtube.com/@adncreativoart?si=ihKTHrMYMRZi1BSo",
+          }}
+        />
+      </div>
+  </div>
+</Seccion>

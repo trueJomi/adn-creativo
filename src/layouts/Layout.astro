@@ -1,4 +1,5 @@
 ---
+import Footer from "./Footer.astro";
 import LayoutInit from "./LayoutInit.astro";
 import NavBar from "./NavBar.astro";
 
@@ -12,9 +13,10 @@ const { class: className }: Props = Astro.props;
 <LayoutInit>
     <NavBar/>
     <main class:list={[
-        "bg-background p-5 pt-19 space-y-3",
+        "bg-background p-5 space-y-3",
         className
     ]} >
         <slot/>
     </main>
+    <Footer/>
 </LayoutInit>

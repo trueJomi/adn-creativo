@@ -12,14 +12,14 @@ const { class: className }: Props = Astro.props;
 
 <LayoutInit>
   <NavBar />
-  <video autoplay muted loop class="h-dvh w-dvw right-0 object-cover absolute z-1 top-0">
+  <video autoplay muted loop class=" h-screen w-dvw right-0 object-cover absolute z-1 top-0">
     <source
       src="https://res.cloudinary.com/deghyfe80/video/upload/v1750178570/fragmentos_1_qyv0l9.mp4"
       type="video/mp4"
     />
   </video>
-  <div class="color-overlay z-2 absolute top-0 h-dvh w-dvw bg-background/40 right-0"></div>
-  <main class:list={["p-5 space-y-3", className]}>
+  <div class="color-overlay z-2 absolute top-0 h-screen w-dvw bg-background/40 right-0"></div>
+  <main class:list={["p-5 py-0 space-y-3", className]}>
     
     <slot />
   </main>

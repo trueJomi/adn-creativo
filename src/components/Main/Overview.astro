@@ -4,20 +4,21 @@ import siluetta from "../../assets/silueata.png";
 import Seccion from "../utils/Seccion.astro";
 ---
 
-<Seccion id="inicio" class="bg-background !p-10 !pb-0 h-dvh" >
+
+<Seccion id="inicio" class="!p-0 pt-5  h-dvh relative z-3" >
   <div
-    class="flex flex-col justify-between md:justify-center md:space-y-5 h-full relative md:left-20 md:w-[calc(100%-20px)]"
+    class="flex flex-col justify-between md:justify-center md:space-y-5 h-full relative md:flex-auto md:items-center md:w-50%"
   >
     <div
       id="titulo"
-      class="font-tittle  text-5xl text-center opacity-0 duration-300 -translate-y-5 transition-all"
+      class="font-tittle  text-5xl text-center opacity-0 duration-300 transition-all md:translate-x-28"
     >
-      <h1 class="text-primary text-[7rem] md:text-[11rem]">ADN</h1>
+      <h1 class="text-primary md:-mb-5 -mb-3 text-[7rem] md:text-[11rem]">ADN</h1>
       <h2 class="text-primary md:text-[5rem]">CREATIVO</h2>
     </div>
     <div
       id="botones"
-      class="uppercase font-teko flex text-background text-2xl justify-center opacity-0 transition-opacity duration-300"
+      class="uppercase font-teko flex text-background text-2xl justify-center opacity-0 transition-opacity md:translate-x-28 duration-300"
     >
       <div class="gap-5 grid md:grid-cols-2">
         <a
@@ -35,7 +36,7 @@ import Seccion from "../utils/Seccion.astro";
       id="estatua"
       src={siluetta}
       alt="Silueta de un hombre con fondo blanco"
-      class="h-80 w-auto mx-auto md:h-11/12 md:absolute md:bottom-0 opacity-0 md:left-[calc(50%-25rem)] transition-all duration-300 translate-y-5"
+      class="h-80 w-auto mx-auto md:h-11/12 md:absolute md:bottom-0 opacity-0 md:left-[calc(50%-18rem)] transition-all duration-300 translate-y-5"
     />
   </div>
 </Seccion>

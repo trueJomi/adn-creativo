@@ -8,6 +8,7 @@ const { class: className }: Props = Astro.props;
     "p-8 bg-background-500 rounded-lg",
     className
 ]}>
+    <slot name="title" />
     <p class=" text-pretty text-xl font-teko font-medium text-primary">
         <slot/>
     </p>

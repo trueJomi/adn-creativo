@@ -162,5 +162,54 @@ export const artistas: Artista[] = [
                 text: "Bianca es una banda"
             }
         ]
+    },
+    {
+        id: 5,
+        nombre: "Kenyi D.",
+        apellido: "Varas Pinillos",
+        frase: "Fundador que abreza la escena con pasión y compromiso",
+        text: [
+            "Kenyi Varas Pinillos es un actor y dramaturgo trujillano, fundador de Free Soul Art. estudió en la Escuela Superior de Arte Dramático “Virgilio Rodríguez Niño” de Trujillo y ha destacado como director de grupos teatrales locales",
+            "Lidera presentaciones y proyectos del grupo Free Soul Ent., donde ejerce tanto en la escena como en la dirección y producción, generando espacios de creación autogestionada y de formación para jóvenes artistas",
+            "Su compromiso es claro: el teatro como motor de cambio social y cultural en Trujillo, generando vínculos comunitarios y oportunidades de desarrollo. A través de Free Soul Kenyi promueve la dramaturgia propia y la participación activa en eventos locales, buscando consolidar un nuevo impulso creativo desde la región."
+        ],
+        imagen: "https://res.cloudinary.com/deghyfe80/image/upload/v1749850403/kenji_1_pprlnj.webp",
+        redes: [
+            {
+                icon: Insta,
+                url: "https://www.instagram.com/demian_pinillos?utm_source=ig_web_button_share_sheet",
+                text: "@demian_pinillos"
+            },
+            {
+                icon: Insta,
+                url: "https://www.instagram.com/free.soul.arte?utm_source=ig_web_button_share_sheet",
+                text: "@free.soul.arte"
+            }
+        ]
+    },
+    {
+        id: 6,
+        nombre: "David",
+        apellido: "Salvatierra",
+        frase: "La narrativa como exploración íntima de lo familiar",
+        text: [
+            "David Salvatierra (Lima, 1981 – radicado en Trujillo) es economista de formación (Universidad Nacional de Trujillo), magíster en Escritura Creativa por la UNMSM, y un referente de la narrativa regional contemporánea.",
+            "Su obra es un viaje emocional a través de los vínculos. Debutó con Lo que sé de mi madre (2014), una colección de relatos que exploran el amor y la distancia familiar. En 2016 presentó la novela breve El sentimiento de la fuga—una ácida crítica al sistema educativo—en la Feria del Libro de Trujillo.",
+            "Su producción más reciente incluye Nueve cuentos envenenados (2020) y Todas las familias tristes (2023), esta última gestada durante la pandemia y presentada en la Feria del Libro de La Libertad. Con ella, profundiza en los claroscuros familiares, testimonio de historias que transitan entre la ternura y el desencuentro.",
+            "Salvatierra ha sido reconocido con menciones y premios en concursos regionales y nacionales, siendo finalista en la Bienal de Cuento “Premio Copé” (2018) por su relato Ohio, 1912. Su obra también figura en múltiples antologías de la narrativa liberteña."
+        ],
+        imagen: "https://res.cloudinary.com/deghyfe80/image/upload/v1750094517/David-1_dfkrrv.webp",
+        redes: [
+            {
+                icon: Insta,
+                url: "https://www.instagram.com/davsalvatm?utm_source=ig_web_button_share_sheet",
+                text: "@davsalvatm"
+            },
+            {
+                icon: Fb,
+                url: "https://www.facebook.com/david.salvatierra.71",
+                text: "David Salvatierra"
+            }         
+        ]
     }
 ]

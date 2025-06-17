@@ -21,21 +21,21 @@ import Tittle from "../utils/Tittle.astro";
       </div>
     </div>
   </div>
+  <Tittle class="text-center"> Nuestros Artistas </Tittle>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 lg:gap-5">
+    {
+      artistas.map((a) => {
+        let title = a.nombre;
+        if (a.apellido !== undefined) {
+          title += ` ${a.apellido}`;
+        }
+        return (
+          <CardArtist id={a.id.toString()} bgimage={a.imagen} text={title} />
+        );
+      })
+    }
+  </div>
 </Seccion>
-<Tittle class="text-center"> Nuestros Artistas </Tittle>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 lg:gap-5">
-  {
-    artistas.map((a) => {
-      let title = a.nombre;
-      if (a.apellido !== undefined) {
-        title += ` ${a.apellido}`;
-      }
-      return (
-        <CardArtist id={a.id.toString()} bgimage={a.imagen} text={title} />
-      );
-    })
-  }
-</div>
 
 <style>
   #modal-container-slider {

@@ -1,4 +1,5 @@
 ---
+import XIcon from "../../assets/XIcon.astro";
 import { artistas } from "../../const/capitulos";
 import CardArtist from "../artist/CardArtist.astro";
 import InfoArtist from "../artist/InfoArtist.astro";
@@ -9,7 +10,10 @@ import Tittle from "../utils/Tittle.astro";
 <Seccion id="artists">
   <div id="modal-container-slider">
     <div class="modal-background">
-      <div class="modal p-5 bg-white" onclick="event.stopPropagation()">
+      <div class="modal p-5 bg-white relative rounded-2xl max-w-md md:max-w-2xl max-h-dvh m-5" onclick="event.stopPropagation()">
+        <button id="close-modal" class="h-5 w-5 absolute top-5 right-5 text-primary" >
+          <XIcon/>
+        </button>
         {
           artistas.map((a) => (
             <InfoArtist
@@ -129,13 +133,19 @@ import Tittle from "../utils/Tittle.astro";
 </style>
 <script>
   document.addEventListener("astro:page-load", () => {
+    const closeModal = document.getElementById("close-modal");
     const artists = document.querySelectorAll(".artist");
     const infoData = document.querySelectorAll(".info");
     const modalContainer = document.getElementById("modal-container-slider");
 
-    if (!modalContainer || infoData.length === 0 || artists.length === 0) {
+    if (!modalContainer || infoData.length === 0|| !closeModal || artists.length === 0) {
       throw new Error("Modal container not found");
     }
+    closeModal.addEventListener("click", () => {
+      modalContainer.classList.add("out");
+      document.body.classList.remove("modal-active");
+      document.body.style.overflow = "";
+    });
 
     modalContainer.addEventListener("click", () => {
       modalContainer.classList.add("out");

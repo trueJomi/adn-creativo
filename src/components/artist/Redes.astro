@@ -1,0 +1,29 @@
+---
+import type { SocialMedia } from "../../model/artistas.model";
+interface Props {
+  class?: string;
+  redes: SocialMedia[];
+}
+
+const { redes, class: className }: Props = Astro.props;
+---
+
+<div class:list={["flex gap-2 flex-wrap justify-center", className]}>
+  {
+    redes.map((red) => (
+      <a
+        href={red.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary hover:text-secondary transition-colors duration-300"
+      >
+        <div class="flex text-sm flex-col items-center jucttify-center gap-2 font-teko">
+          <div class="h-8 w-8">
+            <red.icon />
+          </div>
+          <p class="" >{red.text}</p>
+        </div>
+      </a>
+    ))
+  }
+</div>

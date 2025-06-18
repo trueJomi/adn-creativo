@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { Artista } from "../../model/artistas.model";
+import Redes from "./Redes.astro";
 interface Props {
   class: string;
   artista: Artista;
@@ -14,15 +15,31 @@ if (artista.apellido !== undefined) {
 }
 ---
 
-<div class:list={[className, ""]}>
-  <Image
-    class="object-cover aspect-[3/4] rounded-2xl"
-    src={artista.imagen}
-    width={300}
-    height={400}
-    alt={artista.nombre}
-  />
-  <h1 class="font-teko text-primary text-2xl font-bold mt-3">
-    {title}
-  </h1>
+<div class:list={[className]}>
+  <div class="h-full md:flex md:gap-5 ">
+    <picture class="h-full flex items-center" >
+      <img
+        class="object-cover rounded-2xl aspect-[3/4] h-80 mx-auto"
+        src={artista.imagen}
+        alt={artista.nombre}
+        loading="lazy"
+      />
+    </picture>
+    <div>
+      <h1 class="font-teko text-primary text-2xl font-bold mt-3">
+        {title}
+      </h1>
+      <h2 class="text-primary font-teko italic font-medium mt-1">
+        {artista.frase}
+      </h2>
+      <div class="h-30 overflow-y-auto md:max-w-md md:h-40" >
+        {artista.text.map((p) => (
+          <p class="text-justify text-sm mt-2 font-teko">{p}</p>
+        ))}
+      </div>
+      <div class=" flex justify-center mt-3" >
+        <Redes redes={artista.redes} />
+      </div>
+    </div>
+  </div>
 </div>

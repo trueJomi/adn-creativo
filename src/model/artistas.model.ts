@@ -7,10 +7,10 @@ export interface Artista {
     frase: string;
     text: string[];
     imagen: string;
-    redes: Rede[];
+    redes: SocialMedia[];
 }
 
-interface Rede {
+export interface SocialMedia {
     url: string;
     text: string;
     icon: AstroComponentFactory

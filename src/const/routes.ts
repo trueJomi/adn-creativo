@@ -21,10 +21,10 @@ export const routes = [
   },
   {
     name: "Mapa",
-    path: "#map",
+    path: "#mapa",
   },
   {
     name: "Juego",
-    path: "#game",
+    path: "#juego",
   }
 ];

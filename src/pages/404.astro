@@ -4,11 +4,16 @@ import LayoutInit from "../layouts/LayoutInit.astro";
 ---
 
 <LayoutInit>
-        <div transition:animate="fade"  class=" flex items-center pt-32 h-[calc(100vh-22rem)]" >
+        <div transition:animate="fade"  class=" flex items-center pt-32 h-[calc(100vh-22rem)] font-teko" >
             <div class=" mx-auto text-center" >   
                 <h1 class="text-8xl font-black" >404</h1>
                 <p class="font-black text-3xl" >Page not found</p>
                 <p class="font-black text-3xl" >Todavia en desarrollo</p>
+                <a href="/">
+                    <button class="mt-5 bg-primary text-background px-4 py-2 rounded-xl font-teko text-xl font-bold">
+                        Volver al inicio
+                    </button>
+                </a>
             </div>
         </div>
 </LayoutI>

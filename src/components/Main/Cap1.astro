@@ -7,28 +7,44 @@ import Video from "../utils/Video.astro";
 ---
 
 <Seccion id="cap-1">
-    <Tittle class="text-center md:text-end md:col-span-2 md:mb-2">
-        Capitulo 1: Colores del origen
-    </Tittle>
-    <div class="grid md:grid-cols-2 gap-5 md:gap-x-5">
-        <div class="h-full" >
-            <Video video="SlZ8xeEBJms" />
-        </div>
-        <div class="md:flex md:flex-col md:justify-center space-y-3" >
-            
-            <Description>
-                <h2 slot="title" class="text-center md:text-start text-primary font-teko font-bold text-xl md:text-2xl mb-2" >
-                    Sinopsis:
-                </h2>
-                En la ciudad de Trujillo, artistas independientes crean desde sus propios espacios y disciplinas. Más allá de las limitaciones y dificultades, eligen expresarse a través del arte. Este documental explora sus procesos creativos y muestra cómo la creatividad se desarrolla en contextos reales, donde lo cotidiano convive con la necesidad de decir algo, de transformar el entorno y de encontrar sentido a través de la expresión.
-            </Description>
-            <NavigatorButtons
-                class=" text-center md:col-span-2 md:mt-8"
-                main={{
-                    name: "Mira los siguientes capítulos",
-                    path: "https://youtube.com/@adncreativoart?si=ihKTHrMYMRZi1BSo"
-                }}
-            />
-        </div>
+  <Tittle class="text-center md:text-end md:col-span-2 md:mb-2">
+    Capitulo 1: Colores del origen
+  </Tittle>
+  <div class="grid md:grid-cols-2 gap-5 md:gap-x-5">
+    <div class="h-full">
+      <Video video="SlZ8xeEBJms" />
     </div>
+    <div class="md:flex md:flex-col md:justify-center space-y-3">
+      <Description>
+        <h2
+          slot="title"
+          class="text-center md:text-start text-primary font-teko font-bold text-xl md:text-2xl mb-2"
+        >
+          Sinopsis:
+        </h2>
+        En la ciudad de Trujillo, artistas independientes crean desde sus propios
+        espacios y disciplinas. Más allá de las limitaciones y dificultades, eligen
+        expresarse a través del arte. Este documental explora sus procesos creativos
+        y muestra cómo la creatividad se desarrolla en contextos reales, donde lo
+        cotidiano convive con la necesidad de decir algo, de transformar el entorno
+        y de encontrar sentido a través de la expresión.
+      </Description>
+      <div class=" flex justify-center gap-3" >
+          <a href="https://youtube.com/@adncreativoart?si=ihKTHrMYMRZi1BSo">
+            <button
+              class="text-center md:col-span-2 md:mt-8 bg-primary text-background px-4 py-2 rounded-xl font-teko text-xl font-bold"
+            >
+              Mira los siguientes capítulos
+            </button>
+          </a>
+          <a href="https://open.spotify.com/show/5zcw4VqeYoGxBn1y6XtPV1">
+            <button
+              class="text-center md:col-span-2 md:mt-8 bg-primary text-background px-4 py-2 rounded-xl font-teko text-xl font-bold"
+            >
+              Ver nuestro podcast
+            </button>
+          </a>
+      </div>
+    </div>
+  </div>
 </Seccion>

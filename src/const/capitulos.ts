@@ -133,10 +133,10 @@ export const artistas: Artista[] = [
     {
         id: 4,
         nombre: "Bianca",
-        apellido: "Casanova",
+        apellido: "Casanueva",
         frase: "Pop-rock trujillano con actitud y mucho corazón",
         text: [
-            "Bianca Casanova lidera su propia agrupación de pop-rock indie, en la que es voz y guitarrista rítmica. Junto a André Alfaro (bajo), Joaquín Aguilar (guitarra principal), Marcelo Méndez (batería) y Carlos Von (teclado), la banda acaba de estrenar su primer sencillo “Ceguera EMOcional”, adelanto de un EP próximo.",
+            "Bianca Casanueva lidera su propia agrupación de pop-rock indie, en la que es voz y guitarrista rítmica. Junto a André Alfaro (bajo), Joaquín Aguilar (guitarra principal), Marcelo Méndez (batería) y Carlos Von (teclado), la banda acaba de estrenar su primer sencillo “Ceguera EMOcional”, adelanto de un EP próximo.",
             "En su debut en vivo, la agrupación presentó la canción en el Complejo Arqueológico El Brujo, comenzando a hacerse un nombre en la escena local."
         ],
         imagen: "https://res.cloudinary.com/deghyfe80/image/upload/v1750093987/Bianca-3_uyw1ra.webp",

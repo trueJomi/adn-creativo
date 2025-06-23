@@ -1,15 +1,23 @@
 ---
+import Description from "../utils/Description.astro";
 import Seccion from "../utils/Seccion.astro";
 import Tittle from "../utils/Tittle.astro";
 ---
 
-<Seccion id="mapa" >
+<Seccion id="mapa">
   <Tittle class="text-center"> Mapa de Murales </Tittle>
-  <div class="aspect-video">
-    <iframe
-      title="Mapa de Murales interactivo"
-      src="https://www.google.com/maps/d/u/0/embed?mid=1tjPrvNb5Ijwcv-2fw5MCImY5Udh8azQ&ehbc=2E312F&noprof=1"
-      class="w-full h-full min-h-80"
-      height="480"></iframe>
+  <div class=" grid gap-5 lg:grid-cols-3" >
+    <div class="lg:col-span-2">
+      <iframe
+        title="Mapa de Murales interactivo"
+        src="https://www.google.com/maps/d/u/0/embed?mid=1tjPrvNb5Ijwcv-2fw5MCImY5Udh8azQ&ehbc=2E312F&noprof=1"
+        class="w-full h-full min-h-100 md:min-h-140"
+        height="480"></iframe>
+    </div>
+    <div class=" flex flex-col justify-center" >
+      <Description>
+        Emprende un recorrido por las calles de Trujillo y descubre los murales del artista André Sebastián, donde el color y la emoción transforman los muros en lienzos vivos. Sumérgete en su obra y en otras intervenciones que llenan la ciudad de arte e identidad. Conoce más en el episodio 1 del documental ADN Creativo.
+      </Description>
+    </div>
   </div>
 </Seccion>

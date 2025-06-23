@@ -4,20 +4,20 @@ export const routes = [
     path: "#inicio",
   },
   {
-    name: "Trailer",
-    path: "#trailer",
-  },
-  {
-    name: "Podcast",
-    path: "#podcast",
-  },
-  {
     name: "Artistas",
     path: "#artists",
   },
   {
+    name: "Tráiler",
+    path: "#trailer",
+  },
+  {
     name: "Cuentos",
     path: "#cuentos",
+  },
+  {
+    name: "Podcast",
+    path: "#podcast",
   },
   {
     name: "Mapa",

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import Description from "../utils/Description.astro";
+import Seccion from "../utils/Seccion.astro";
+import Tittle from "../utils/Tittle.astro";
+---
+
+<Seccion>
+  <Tittle> Agradecimientos </Tittle>
+  <div class="grid lg:grid-cols-2 gap-5" >
+    <div class=" flex flex-col justify-center" >
+      <Description class=" space-y-3" >
+        <h2 slot="title" class=" text-2xl font-bold" >¡Gracias por ser parte de ADN Creativo!</h2>
+        <p>
+            Agradecemos profundamente a quienes nos apoyaron y apostaron por este encuentro
+            presencial: su confianza convirtió una idea en realidad. A los artistas: su talento
+            y pasión le dieron alma a cada espacio.
+    
+        </p>
+        <p>
+          Agradecemos profundamente a quienes nos apoyaron y apostaron por este
+          encuentro presencial: su confianza convirtió una idea en realidad. A los
+          artistas: su talento y pasión le dieron alma a cada espacio.
+        </p>
+        <p>¡Sigamos creando juntos!</p>
+      </Description>
+    </div>
+      <div>
+        <Image
+            src="https://res.cloudinary.com/deghyfe80/image/upload/v1752293487/P1000142_1_ruxq7m.webp"
+            alt="Imagen de agradecimiento"
+            class="w-full h-auto rounded-lg"
+            width={500}
+            height={500}
+        />
+      </div>
+  </div>
+
+  <!-- https://res.cloudinary.com/deghyfe80/image/upload/v1752293487/P1000142_1_ruxq7m.webp     -->
+</Seccion>

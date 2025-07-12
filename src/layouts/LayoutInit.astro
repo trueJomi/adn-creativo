@@ -4,35 +4,61 @@ import "../styles/global.css";
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" href="./logo.ico">
-        <meta name="description" content="Empresa de productos y servicos de segurida para el hogar y empresas." />
-        <meta name="generator" content={Astro.generator} />
-        <meta name="image" content="https://res.cloudinary.com/deghyfe80/image/upload/v1749674157/logo_dpv2hk.jpg" />
-        <meta property="og:title" content="AND CREATIVO" />
-        <meta property="og:description" content="Proyecto Transmedia." />
-        <meta property="og:image" content="https://res.cloudinary.com/deghyfe80/image/upload/v1749674157/logo_dpv2hk.jpg" />
-        <!-- <meta property="og:url" content="https://neelss.com" /> -->
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AND CREATIVO" />
-        <meta name="twitter:description" content="Proyecto Transmedia." />
-        <meta name="twitter:image" content="https://res.cloudinary.com/deghyfe80/image/upload/v1749674157/logo_dpv2hk.jpg" />
-        <meta property="og:locale" content="es_ES" />
-        <meta property="og:site_name" content="ADN CREATIVO" />
-		<link rel="preconnect" href="https://firebasestorage.googleapis.com">
-		<link rel="sitemap" href="/sitemap-index.xml" />
-        <link rel="preconnect" href="https://res.cloudinary.com/deghyfe80/video/upload/v1750178570/fragmentos_1_qyv0l9.mp4" >
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
-		<!-- <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> -->
-		<title>ADN Creativo</title>
-		<ClientRouter/>
-	</head>
-	<body transition:animate="slide"  class="relative bg-background      " >
-		<slot/>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="./logo.ico" />
+    <meta
+      name="description"
+      content="Empresa de productos y servicos de segurida para el hogar y empresas."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="image"
+      content="https://res.cloudinary.com/deghyfe80/image/upload/v1749674157/logo_dpv2hk.jpg"
+    />
+    <meta property="og:title" content="AND CREATIVO" />
+    <meta property="og:description" content="Proyecto Transmedia." />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/deghyfe80/image/upload/v1749674157/logo_dpv2hk.jpg"
+    />
+    <!-- <meta property="og:url" content="https://neelss.com" /> -->
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AND CREATIVO" />
+    <meta name="twitter:description" content="Proyecto Transmedia." />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/deghyfe80/image/upload/v1749674157/logo_dpv2hk.jpg"
+    />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="ADN CREATIVO" />
+    <link rel="preconnect" href="https://firebasestorage.googleapis.com" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="fb:app_id" content="&#123;582933104890269&#125;" />
+    <link
+      rel="preconnect"
+      href="https://res.cloudinary.com/deghyfe80/video/upload/v1750178570/fragmentos_1_qyv0l9.mp4"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> -->
+    <title>ADN Creativo</title>
+    <ClientRouter />
+  </head>
+  <body transition:animate="slide" class="relative bg-background">
+    <slot />
+  </body>
+  <div id="fb-root"></div>
+  <script
+    async
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v23.0&appId=582933104890269"
+  ></script>
 </html>

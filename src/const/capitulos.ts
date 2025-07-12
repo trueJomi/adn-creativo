@@ -11,7 +11,7 @@ export const capitulos: Capitulo[] = [
         sinopsis: "En este capítulo, exploraremos los colores que nos definen y cómo estos influyen en nuestra identidad. A través de imágenes y reflexiones, descubriremos la paleta única que cada uno de nosotros lleva dentro.",
         video: "SlZ8xeEBJms",
         image: "https://res.cloudinary.com/deghyfe80/image/upload/v1750093986/andr%C3%A9-2_itd1zq.webp",
-        titulo: "colores del origen",
+        titulo: "colores del orígen",
         slug: "colores-del-origen",
         color: "blue"
     },
